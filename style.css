@@ -42,7 +42,7 @@ body{
     transition: all .2s ease-in-out;
 }
 
-[id^='block']:hover{
+.selected{
     transform: scale(1.1);
 }
 
@@ -61,6 +61,10 @@ section{
     margin: 30px;
     height: 400px;
     width: 10px;
+    border: 5px solid #181818;
     border-radius: 10px 10px 0px 0px;
 }
 
+section:hover{
+    border: 5px solid #f2ee05;
+}
