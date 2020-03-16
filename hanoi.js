@@ -10,7 +10,7 @@ let selectedDiskNode
 const selectTower = function (event) {
     if ( clickMode === "pickUp" ) {
         const selectedTower = event.currentTarget;
-        console.log(selectedTower);
+        console.log(event.currentTarget);
         console.log(clickMode)
         const selectedDisk = selectedTower.lastElementChild;
         console.log(selectedDisk);
@@ -29,12 +29,13 @@ const selectTower = function (event) {
             if (selectedDiskNode.dataset.size < topDiskDropTower.dataset.size) {
                 dropTower.appendChild(selectedDiskNode);
             }
-            // for win
-            if (dropTower.childElementCount === 4) {
-                document.alert("YOU WON!")
-            }
+
         }
         clickMode = "pickUp"
+    }
+    // for win
+    if (pole2.childElementCount === 4 || pole3.childElementCount === 4) {
+        alert("YOU WON!")
     }
 }
 pole1.addEventListener('click', selectTower)
